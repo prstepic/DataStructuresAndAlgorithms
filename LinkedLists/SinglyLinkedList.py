@@ -68,6 +68,21 @@ class SinglyLinkedList:
                     else:
                         currentNode = currentNode.nextNode
                 index += 1
+
+    def searchForValue(self, valueToFind):
+        if(self.head == None):
+            print("LIST IS EMPTY")
+            return -1
+        currentNode = self.head
+        index = 0
+        while(currentNode != None):
+            if(currentNode.value == valueToFind):
+                return index
+            else:
+                currentNode = currentNode.nextNode
+            index += 1
+        print("VALUE NOT FOUND")
+        return -1
                 
 
     
@@ -97,5 +112,9 @@ singlyLL.insertAtPosition(100, 7)
 # Should print 90, 7, 6, 10, 88, 9, 11, 100
 print("Order 2:")
 singlyLL.traverseList()
+
+print(singlyLL.searchForValue(8))
+print(singlyLL.searchForValue(7))
+print(singlyLL.searchForValue(100))
 
 
