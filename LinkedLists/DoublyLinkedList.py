@@ -7,7 +7,7 @@ class Node:
         self.nextNode = nextNode
         self.prevNode = prevNode
 
-    # Set/Change the internal value of the Linked List
+    # Set/Change the internal value of the Node
     def setValue(self, newValue):
         self.value = newValue
 
