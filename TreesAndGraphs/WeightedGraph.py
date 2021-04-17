@@ -1,0 +1,3 @@
+class GraphNode:
+
+class WeightedGraph:

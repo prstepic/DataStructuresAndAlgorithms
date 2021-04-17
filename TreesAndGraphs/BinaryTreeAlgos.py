@@ -16,6 +16,22 @@ class TreeNode:
   def setValue(self, value):
     self.value = value
 
+class SearchTreeNode(TreeNode):
+  def addChild(self, nodeValue):
+    addChildToTree(nodeValue, self)
+
+def addChildToTree(value, node):
+  if(value <= node.value and node.left == None):
+    node.left = SearchTreeNode(value)
+  elif(value > node.value and node.right == None):
+    node.right = SearchTreeNode(value)
+  elif(value <= node.value and node.left != None):
+    addChildToTree(value, node.left)
+  elif(value > node.value and node.right != None):
+    addChildToTree(value, node.right)
+  else:
+    return False
+
 # In Order - Left, Root, Right
 def inOrderTraversal(treeNode):
   if(treeNode == None):
@@ -39,3 +55,4 @@ def postOrderTraversal(treeNode):
   postOrderTraversal(treeNode.left)
   postOrderTraversal(treeNode.right)
   print(treeNode.value)
+
