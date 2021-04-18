@@ -108,7 +108,7 @@ class Graph:
   # A topological sort is one in which each node in the sorted list comes before
   # the next nodes in the list. In other words if there is an edge in the graph
   # between a to b, and b to c, then a will appear before b in the list, and 
-  # b will appear before c, therefore a is beore c
+  # b will appear before c, therefore a is beore c. Runtime O(V + E)
   def topologicalSort(self):
 
     # queue that will contain the order of the sort
