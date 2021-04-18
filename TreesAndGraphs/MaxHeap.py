@@ -1,3 +1,8 @@
+# See Documentation of MinHeap
+# This class represents a maximum heap
+# It is implemented mostly the same as a Minimum Heap
+# However, the root element of the heap is the Maximum of the heap
+# Each subtree inherits this case as well
 class MaxHeap:
   def __init__(self):
     self.heap = []
