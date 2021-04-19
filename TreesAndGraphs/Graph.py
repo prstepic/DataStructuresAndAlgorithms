@@ -58,6 +58,30 @@ class Graph:
         if(child not in self.visited):
           self.depthFirstSearch(child)
 
+  # Iterative approach to depth first search using a stack
+  def depthFirstSearchIterative(self, startNode, nodeToFind):
+    nodeStack = []
+    nodeStack.append(startNode)
+    visitedNodes = set()
+    accountedFor = set()
+    dfsList = []
+
+    # while the stack is not empty pop the top node of the stack
+    # then add each unvisited, unaccounted child to the stack to be processed
+    # then mark the node as visited, if the popped node was the node to find,
+    # then break from the list
+    while(len(nodeStack) != 0):
+      tempNode = nodeStack.pop()
+      for child in tempNode.children:
+        if(child not in visitedNodes and child not in accountedFor):
+          nodeStack.append(child)
+          accountedFor.add(child)
+      visitedNodes.add(tempNode)
+      dfsList.append(tempNode)
+      if(tempNode.value == nodeToFind):
+        break
+    return dfsList
+    
   # Breadth First Search algorithm that will visit each node on a level
   # of a graph before moving on to the next level of the graph
   # In other words, all children of a node will be visited before the children's
